@@ -4,9 +4,13 @@
 class Game
   attr_reader :board
 
-  def initialize(board = Board.new, players = [0, 1])
-    @board = board
-    @players = players
+  def initialize
+    @board = Board.new
+    @players = [:human, :computer]
+  end
+
+  def swap_players
+    @players.rotate!
   end
 
   def move(index)
@@ -33,6 +37,14 @@ class Game
 
   def tied?
     !won? && @board.full?
+  end
+
+  def winning_set
+    return nil unless won?
+
+    @board.winning_indices.find do |indices|
+      indices.all? { |index| @board.grid[index] == winner }
+    end
   end
 
   def winner

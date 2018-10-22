@@ -1,8 +1,7 @@
-class AppDelegate
-  def application(application, didFinishLaunchingWithOptions:launchOptions)
-    @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-    @window.rootViewController = GameViewController.alloc.init
-    @window.makeKeyAndVisible
-    true
+class AppDelegate < PM::Delegate
+  status_bar true, animation: :fade
+
+  def on_load(app, options)
+    open GameScreen
   end
 end

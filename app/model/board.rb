@@ -2,10 +2,11 @@
 
 # Board
 class Board
-  attr_reader :grid, :winning_indices
+  attr_reader :grid, :winning_indices, :corners
 
-  def initialize(grid = Array.new(9, nil))
-    @grid = grid
+  def initialize
+    @grid = Array.new(9, nil)
+    @corners = [0, 2, 6, 8]
     @winning_indices = [
       [0, 1, 2], [3, 4, 5], [6, 7, 8],
       [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -37,9 +38,5 @@ class Board
 
   def empty?
     available_indices.length == 9
-  end
-
-  def corners
-    [0, 2, 6, 8]
   end
 end

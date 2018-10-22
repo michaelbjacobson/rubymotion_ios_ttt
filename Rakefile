@@ -1,6 +1,7 @@
-# -*- coding: utf-8 -*-
-$:.unshift("/Library/RubyMotion/lib")
-$:.unshift("~/.rubymotion/rubymotion-templates")
+# frozen_string_literal: true
+
+$LOAD_PATH.unshift('/Library/RubyMotion/lib')
+$LOAD_PATH.unshift('~/.rubymotion/rubymotion-templates')
 
 # ===========================================================================================
 # 1. Be sure to read `readme.md`.
@@ -15,11 +16,9 @@ rescue LoadError
 end
 
 require 'redpotion'
-require 'ruby_motion_query'
-require 'rmq_alerts'
 
 # Uncomment the following line to add an icon generate capacity to your build
-#task 'build:icons' => 'resources/app-icon.icon_asset'
+# task 'build:icons' => 'resources/app-icon.icon_asset'
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
@@ -32,8 +31,6 @@ Motion::Project::App.setup do |app|
 
   # version for your app
   app.version = '1.0'
-
-  app.fonts = ['source-sans-pro.tff']
 
   # ===========================================================================================
   # 3. Set your deployment target (it's recommended that you at least target 10.0 and above).
@@ -105,16 +102,9 @@ def define_icon_defaults!(app)
   # located in the readme.
 
   app.info_plist['CFBundleIcons'] = {
-    'CFBundlePrimaryIcon' => {
-      'CFBundleIconName' => 'AppIcon',
-      'CFBundleIconFiles' => ['AppIcon60x60']
-    }
-  }
-
-  app.info_plist['CFBundleIcons~ipad'] = {
-    'CFBundlePrimaryIcon' => {
-      'CFBundleIconName' => 'AppIcon',
-      'CFBundleIconFiles' => ['AppIcon60x60', 'AppIcon76x76']
+    CFBundlePrimaryIcon: {
+      CFBundleIconName: 'AppIcon',
+      CFBundleIconFiles: ['AppIcon60x60']
     }
   }
 end
