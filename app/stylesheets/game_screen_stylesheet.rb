@@ -24,7 +24,7 @@ class GameScreenStylesheet < ApplicationStylesheet
     }
     style.text_alignment = :center
     style.color = color.almost_black
-    style.font = rmq.font.font_with_name('SourceSansPro-Light', 28)
+    style.font = font.medium
   end
 
   def secondary_prompt(style)
@@ -35,7 +35,7 @@ class GameScreenStylesheet < ApplicationStylesheet
     }
     style.text_alignment = :center
     style.color = color.almost_black
-    style.font = rmq.font.font_with_name('SourceSansPro-Light', 20)
+    style.font = font.small
     style.text = 'Press and hold the grid to play again.'
     style.resize_to_fit_text
     style.centered = :horizontal

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-# MainScreen
+# GameScreen
 class GameScreen < PM::Screen
-  attr_accessor :first_player
-
+  title 'Tic-Tac-Toe'
   stylesheet GameScreenStylesheet
+  attr_accessor :first_player
 
   def on_load
     init_views

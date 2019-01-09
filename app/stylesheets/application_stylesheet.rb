@@ -9,6 +9,11 @@ class ApplicationStylesheet < RubyMotionQuery::Stylesheet
     color.add_named :light_grey, '#F5F5F5'
     color.add_named :almost_white, '#FDFDFD'
     color.add_named :almost_black, '#191919'
+
+    font_family = 'SourceSansPro-Light'
+    font.add_named :large, font_family, 42
+    font.add_named :medium, font_family, 28
+    font.add_named :small, font_family, 20
   end
 
   def root_view(style)
